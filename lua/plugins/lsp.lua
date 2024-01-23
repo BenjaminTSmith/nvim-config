@@ -5,19 +5,42 @@ return {
             require("mason").setup()
         end
     },
+
     {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup()
         end
     },
+
     {
         "neovim/nvim-lspconfig",
         config = function()
-            require("lspconfig").rust_analyzer.setup{}
-            require("lspconfig").lua_ls.setup{}
-            require("lspconfig").pyright.setup{}
-            require("lspconfig").clangd.setup{}
+            local capabilities = require("cmp_nvim_lsp").default_capabilities()
+            local lspconfig = require("lspconfig");
+            lspconfig.rust_analyzer.setup{
+                capabilities = capabilities
+            }
+            lspconfig.lua_ls.setup{
+                capabilities = capabilities
+            }
+            lspconfig.pyright.setup{
+                capabilities = capabilities
+            }
+            lspconfig.clangd.setup{
+                capabilities = capabilities
+            }
+            lspconfig.eslint.setup{
+                capabilities = capabilities
+            }
+            lspconfig.bashls.setup{
+                capabilities = capabilities
+            }
+
+            vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+            vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+            vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+
         end
     },
 }
