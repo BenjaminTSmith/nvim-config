@@ -9,7 +9,9 @@ return {
     {
         "williamboman/mason-lspconfig.nvim",
         config = function()
-            require("mason-lspconfig").setup()
+            require("mason-lspconfig").setup({
+                ensure_installed = { "rust_analyzer", "clangd", }
+            })
         end
     },
 
@@ -34,6 +36,9 @@ return {
                 capabilities = capabilities
             }
             lspconfig.bashls.setup{
+                capabilities = capabilities
+            }
+            lspconfig.pylyzer.setup{
                 capabilities = capabilities
             }
 
