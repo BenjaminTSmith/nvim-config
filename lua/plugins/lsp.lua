@@ -41,6 +41,12 @@ return {
             lspconfig.pylyzer.setup{
                 capabilities = capabilities
             }
+            lspconfig.cssls.setup{
+                capabilities = capabilities
+            }
+            lspconfig.html.setup{
+                capabilities = capabilities
+            }
 
             vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
             vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
