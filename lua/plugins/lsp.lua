@@ -38,13 +38,13 @@ return {
             lspconfig.bashls.setup{
                 capabilities = capabilities
             }
-            lspconfig.pylyzer.setup{
-                capabilities = capabilities
-            }
             lspconfig.cssls.setup{
                 capabilities = capabilities
             }
             lspconfig.html.setup{
+                capabilities = capabilities
+            }
+            lspconfig.cpptools.setup{
                 capabilities = capabilities
             }
 
