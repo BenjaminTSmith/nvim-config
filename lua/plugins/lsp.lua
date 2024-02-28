@@ -17,6 +17,13 @@ return {
 
     {
         "neovim/nvim-lspconfig",
+        init_options = {
+            userLanguages = {
+                eelixir = "html-eex",
+                eruby = "erb",
+                rust = "html",
+            },
+        },
         config = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
             local lspconfig = require("lspconfig");
@@ -42,9 +49,6 @@ return {
                 capabilities = capabilities
             }
             lspconfig.html.setup{
-                capabilities = capabilities
-            }
-            lspconfig.cpptools.setup{
                 capabilities = capabilities
             }
 
