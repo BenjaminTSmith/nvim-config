@@ -27,28 +27,23 @@ return {
         config = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
             local lspconfig = require("lspconfig");
-            lspconfig.rust_analyzer.setup{
+            lspconfig.rust_analyzer.setup {
                 capabilities = capabilities
-            }
-            lspconfig.lua_ls.setup{
+            } lspconfig.lua_ls.setup {
                 capabilities = capabilities
-            }
-            lspconfig.pyright.setup{
+            } lspconfig.pyright.setup {
                 capabilities = capabilities
-            }
-            lspconfig.clangd.setup{
+            } lspconfig.clangd.setup {
                 capabilities = capabilities
-            }
-            lspconfig.eslint.setup{
+            } lspconfig.bashls.setup {
                 capabilities = capabilities
-            }
-            lspconfig.bashls.setup{
+            } lspconfig.cssls.setup {
                 capabilities = capabilities
-            }
-            lspconfig.cssls.setup{
+            } lspconfig.html.setup {
                 capabilities = capabilities
-            }
-            lspconfig.html.setup{
+            } lspconfig.cmake.setup {
+                capabilities = capabilities
+            } lspconfig.ocamllsp.setup {
                 capabilities = capabilities
             }
 
