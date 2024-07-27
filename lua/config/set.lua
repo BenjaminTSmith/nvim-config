@@ -9,7 +9,7 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 vim.opt.wrap = false
-vim.cmd("set colorcolumn=80")
+vim.cmd("set colorcolumn=120")
 
 vim.g.have_nerd_font = true
 vim.opt.hlsearch = true
@@ -22,3 +22,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+vim.api.nvim_create_user_command('Wq', function()
+  vim.cmd('wq')
+end, {})
+
+vim.api.nvim_create_user_command('W', function()
+  vim.cmd('w')
+end, {})
