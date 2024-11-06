@@ -6,13 +6,19 @@ return {
         local configs = require("nvim-treesitter.configs")
         configs.setup({
             ensure_installed = {
-                "c", "lua", "vim", "vimdoc",
-                "query", "elixir", "javascript",
-                "html", "rust", "cpp", "python"
+                "c", "lua", "vim",
+                "html", "rust", "cpp", "python",
+                "glsl", "zig"
             },
             sync_install = false,
             highlight = { enable = true },
             indent = { enable = true },
+        })
+        vim.filetype.add({
+            extension = {
+                vert = "glsl",
+                frag = "glsl",
+            }
         })
     end
 }

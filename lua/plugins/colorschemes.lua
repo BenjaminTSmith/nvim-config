@@ -1,5 +1,4 @@
 return {
-    --[[
     {
         "catppuccin/nvim",
         name = "catppuccin",
@@ -54,11 +53,11 @@ return {
                     comments = { italic = false },
                     keywords = { italic = false },
                 },
-                -- vim.cmd.colorscheme("rose-pine")
+                vim.cmd.colorscheme("rose-pine-moon")
             })
         end
     },
-    --]]
+
     {
         "ellisonleao/gruvbox.nvim",
         priority = 1000 ,
@@ -89,7 +88,7 @@ return {
                 dim_inactive = false,
                 transparent_mode = false,
             })
-            vim.cmd("colorscheme gruvbox")
+            -- vim.cmd.colorscheme("gruvbox")
         end
     }
 }

@@ -30,7 +30,14 @@ return {
             lspconfig.rust_analyzer.setup {
                 capabilities = capabilities
             } lspconfig.lua_ls.setup {
-                capabilities = capabilities
+                settings = {
+                    capabilities = capabilities,
+                    Lua = {
+                        diagnostics = {
+                            globals = { "vim", },
+                        }
+                    }
+                }
             } lspconfig.pyright.setup {
                 capabilities = capabilities
             } lspconfig.clangd.setup {
@@ -45,11 +52,17 @@ return {
                 capabilities = capabilities
             } lspconfig.ocamllsp.setup {
                 capabilities = capabilities
+            } lspconfig.asm_lsp.setup {
+                capabilities = capabilities
+            } lspconfig.zls.setup {
+                capabilities = capabilities
             }
 
-            vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-            vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-            vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+            vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition'})
+            vim.keymap.set('n', 'K', vim.lsp.buf.hover)
+            vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename' })
+            vim.keymap.set('n', '<leader>ls', ':LspStart<CR>', { desc = 'Start LSP client' })
+            vim.keymap.set('n', '<leader>le', ':LspStop<CR>', { desc = 'End LSP client' })
 
         end
     },
